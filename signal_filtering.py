@@ -7,8 +7,8 @@ from utils.data_processing import preprocess_data, postprocess_data
 # Create blueprint
 signal_filtering_bp = Blueprint('signal_filtering', __name__)
 
-# Load pre-trained model
-model = tf.keras.models.load_model('signal_filter_model.h5')
+# Load pre-trained model in Keras format
+model = tf.keras.models.load_model('signal_filter_model.keras')
 
 # Initialize scaler
 scaler = StandardScaler()
@@ -35,6 +35,7 @@ def filter_signal():
               description: Filtered signal
     """
     try:
+        # Get data from request
         data = request.json['data']
         data = np.array(data).reshape(-1, 1)
 
@@ -47,6 +48,7 @@ def filter_signal():
         # Postprocess data
         filtered_signal = postprocess_data(filtered_signal, scaler)
 
+        # Return filtered signal as JSON
         return jsonify({'filtered_signal': filtered_signal.flatten().tolist()}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
