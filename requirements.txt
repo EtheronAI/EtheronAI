@@ -1,0 +1,7 @@
+flask
+flasgger
+tensorflow
+scikit-learn
+numpy
+transformers
+requests
