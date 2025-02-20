@@ -23,9 +23,9 @@ Welcome to EtheronAI! This repository contains the codebase and API for our AI-p
    ```
 
 4. **Access the API**:
-   The API will be available at [http://localhost:5000](http://localhost:5000).
+   The API will be available at [http://localhost:5000](http://localhost:5500).
 
-   Swagger documentation: [http://localhost:5000/apidocs/](http://localhost:5000/apidocs/).
+   Swagger documentation: [http://localhost:5000/apidocs/](http://localhost:5500/apidocs/).
 
 ---
 
